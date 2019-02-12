@@ -1,0 +1,68 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Keli",
+	"patterns": [
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#types"
+		},
+		{
+			"include": "#tags"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#tags"
+		},
+		{
+			"include": "#functions"
+		}
+	],
+	"repository": {
+		"strings": {
+			"name": "string.quoted.double.keli",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.keli",
+					"match": "\\\\."
+				}
+			]
+		},
+		"types": {
+			"name": "literal.type.keli",
+			"patterns": [{
+				"name": "entity.name.type",
+				"match": "\\b[A-Z][a-zA-Z0-9]*\\b"
+			}]
+		},
+		"functions": {
+			"name": "literal.function.keli",
+			"patterns": [{
+				"name": "entity.name.function",
+				"match": "[.]\\s*([a-z][a-zA-Z0-9]*)"
+			},{
+				"name": "entity.name.function",
+				"match": "\\b([a-z][a-zA-Z0-9]*)\\s*[(]"
+			}]
+
+		},
+		"keywords": {
+			"patterns": [{
+				"name": "storage.type.keyword.keli",
+				"match": "\\b(if|else|return|carry|record|tag)\\b"
+			}]
+		},
+		"tags": {
+			"patterns": [{
+				"name": "keyword.control.tag.keli",
+				"match": "[#]([a-z][a-zA-Z0-9]*)"
+			}]
+		}
+	},
+	"scopeName": "source.keli"
+}

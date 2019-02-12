@@ -1,0 +1,26 @@
+{
+    "name": "keli-language-support",
+    "displayName": "Keli Language Support",
+    "description": "Language support for Keli.",
+    "version": "0.0.1",
+    "publisher": "wongjiahau",
+    "engines": {
+        "vscode": "^1.30.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "keli",
+            "aliases": ["Keli", "keli"],
+            "extensions": [".keli"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "keli",
+            "scopeName": "source.keli",
+            "path": "./syntaxes/keli.tmLanguage.json"
+        }]
+    }
+}
